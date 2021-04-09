@@ -5,6 +5,8 @@
 import SwiftUI
 
 internal struct SkillsGrid: View {
+    @Environment(\.colorScheme) var colorScheme
+
     var skills: [Skill]
 
     #if os(macOS)
@@ -47,7 +49,7 @@ internal struct SkillsGrid: View {
                         .fixedSize()
                         .overlay(
                             RoundedRectangle(cornerRadius: 16)
-                                .stroke(Color("main"), lineWidth: 2))
+                                .stroke(colorScheme == .dark ? Color.mainDark : Color.mainLight, lineWidth: 2))
             }
         }
     }
