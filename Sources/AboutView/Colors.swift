@@ -9,6 +9,6 @@ import Foundation
 import SwiftUI
 
 extension Color {
-    static let mainLight = Color(red: 194, green: 126, blue: 126)
-    static let mainDark = Color(red: 252, green: 177, blue: 3)
+    static let mainLight = Color(red: 194 / 255, green: 126 / 255, blue: 126 / 255)
+    static let mainDark = Color(red: 252 / 255, green: 177 / 255, blue: 3 / 255)
 }
