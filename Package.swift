@@ -21,6 +21,7 @@ let package = Package(
     targets: [
         .target(
             name: "AboutView",
-            dependencies: ["HttpRequestHook"])
+            dependencies: ["HttpRequestHook"],
+            resources: [.process("Sources/AboutView/Resources/Assets.xcassets")])
     ]
 )
