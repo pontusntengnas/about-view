@@ -7,6 +7,12 @@ import SwiftUI
 internal struct SkillsGrid: View {
     var skills: [Skill]
 
+    #if os(macOS)
+    let fontStyle: Font = .body
+    #else
+    let fontStyle: Font = .caption
+    #endif
+
     static let skillColumnSpacing: CGFloat = 2
     let skillColumns: [GridItem] = [
         GridItem(
@@ -36,6 +42,7 @@ internal struct SkillsGrid: View {
                 spacing: 12) {
             ForEach(skills, id: \.name) { skill in
                 Text(skill.name)
+                        .font(fontStyle)
                         .padding(10)
                         .fixedSize()
                         .overlay(
