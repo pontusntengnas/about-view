@@ -62,7 +62,7 @@ public struct AboutDeveloper: View {
     }
 }
 
-struct AboutDeveloper_Previews: PreviewProvider {
+internal struct AboutDeveloper_Previews: PreviewProvider {
     static var previews: some View {
         AboutDeveloper(
             loadingProfile: false,
