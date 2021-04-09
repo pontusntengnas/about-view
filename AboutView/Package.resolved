@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "HttpRequestHook",
+        "repositoryURL": "https://github.com/pontusntengnas/swift-http-hook",
+        "state": {
+          "branch": null,
+          "revision": "c34a13c43498adc3a1f2f980f084e63e66f1303d",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
