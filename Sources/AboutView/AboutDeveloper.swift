@@ -14,6 +14,14 @@ public struct AboutDeveloper: View {
     @State var profile: Profile?
     @State var error = true
 
+    public init() { }
+
+    internal init(loadingProfile: Bool, profile: Profile?, error: Bool) {
+        self.loadingProfile = loadingProfile
+        self.profile = profile
+        self.error = error
+    }
+
     func getProfile() {
         guard let aboutApiUrl = ProcessInfo.processInfo.environment["ABOUT_API_URL"] else {
             Logger().error("Missing required environment variable ABOUT_API_URL")
@@ -62,7 +70,7 @@ public struct AboutDeveloper: View {
     }
 }
 
-internal struct AboutDeveloper_Previews: PreviewProvider {
+struct AboutDeveloper_Previews: PreviewProvider {
     static var previews: some View {
         AboutDeveloper(
             loadingProfile: false,
