@@ -47,7 +47,7 @@ internal struct SkillsGrid: View {
                         .fixedSize()
                         .overlay(
                             RoundedRectangle(cornerRadius: 16)
-                                .stroke(Color("aboutMain"), lineWidth: 2))
+                                .stroke(Color("main"), lineWidth: 2))
             }
         }
     }
