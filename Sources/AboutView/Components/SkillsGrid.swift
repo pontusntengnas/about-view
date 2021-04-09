@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-struct SkillsGrid: View {
+internal struct SkillsGrid: View {
     var skills: [Skill]
 
     static let skillColumnSpacing: CGFloat = 2

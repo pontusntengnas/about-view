@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct ProfileMock {
+internal struct ProfileMock {
     // swiftlint:disable:next function_body_length
     public static func getMockProfile() -> Profile {
         let profileJson = """

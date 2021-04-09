@@ -9,11 +9,10 @@ import SwiftUI
 import HttpRequestHook
 import OSLog
 
-struct AboutDeveloper: View {
+public struct AboutDeveloper: View {
     @State var loadingProfile = false
     @State var profile: Profile?
     @State var error = true
-    @State var errorMessage = ""
 
     func getProfile() {
         guard let aboutApiUrl = ProcessInfo.processInfo.environment["ABOUT_API_URL"] else {
@@ -25,7 +24,6 @@ struct AboutDeveloper: View {
         let hook = HttpRequestHook()
 
         hook.get(request: httpRequest) { (callback: Callback<Profile>) in
-            errorMessage = "An error occurred"
             loadingProfile = callback.loading
             error = callback.error != nil
             profile = callback.result
@@ -37,7 +35,7 @@ struct AboutDeveloper: View {
             if loadingProfile {
                 ProgressView("Loading")
             } else if error {
-                Text(errorMessage)
+                Text("An error occurred")
             }
             if let profile = profile {
                 Header(details: profile.details)
@@ -54,7 +52,7 @@ struct AboutDeveloper: View {
         })
     }
 
-    var body: some View {
+    public var body: some View {
         #if os(macOS)
         content
             .frame(maxHeight: 700, alignment: .center)
@@ -69,7 +67,6 @@ struct AboutDeveloper_Previews: PreviewProvider {
         AboutDeveloper(
             loadingProfile: false,
             profile: ProfileMock.getMockProfile(),
-            error: false,
-            errorMessage: "")
+            error: false)
     }
 }

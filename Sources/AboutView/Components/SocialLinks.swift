@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-struct SocialLinks: View {
+internal struct SocialLinks: View {
     var socialLinks: [SocialLink]
 
     var body: some View {

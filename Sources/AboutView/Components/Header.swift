@@ -10,7 +10,7 @@ import Cocoa
 typealias UIImage = NSImage
 #endif
 
-struct Header: View {
+internal struct Header: View {
     var details: Details
 
     @State var picture: UIImage?
